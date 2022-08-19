@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,32 +8,38 @@
     <title>Search</title>
     <link rel="stylesheet" href="/css/main.css">
 </head>
+
 <body>
     <section id="form" class="bg-grey">
-        <div class="section-inner pad-t-dbl">  
-            <h1 id="page-title" class="h2 text-center text-black mar-b" tabindex="-1">Let Us Help You Find the Answers You're Looking for...</h1>
+        <div class="section-inner pad-t-dbl">
+            <h1 id="page-title" class="h2 text-center text-black mar-b" tabindex="-1">Let Us Help You Find the Answers
+                You're Looking for...</h1>
             <div id="intellsuggest" tabindex="-1" role="dialog" aria-labelledby="">
                 <form method="get" action="" id="intellResponse_form">
                     <div class="field-row">
-                    <div class="col-1">
-                    </div>
-                    <div class="col-9">
-                        <input type="hidden" name="IR_INTERFACE_ID" value="5">
-                        <input type="hidden" name="type" value="0">
-                        <div class="input-wpr">
-                            <label for="intelli-search" class="offscreen">Ask your question</label>
-                            <input type="text" name="question" id="intelli-search" class="ui-autocomplete-input" autocomplete="off" placeholder="Ask your question" spellcheck="false" data-ms-editor="true">
-                            <span class="disclaimer about_results display-none">About <span class="count-total">8161</span> results (<span id="count-time"></span> seconds)</span>
+                        <div class="col-1">
+                        </div>
+                        <div class="col-9">
+                            <input type="hidden" name="IR_INTERFACE_ID" value="5">
+                            <input type="hidden" name="type" value="0">
+                            <div class="input-wpr">
+                                <label for="intelli-search" class="offscreen">Ask your question</label>
+                                <input type="text" name="question" id="intelli-search" class="ui-autocomplete-input"
+                                    autocomplete="off" placeholder="Ask your question" spellcheck="false"
+                                    data-ms-editor="true">
+                                <span class="disclaimer about_results display-none">About <span
+                                        class="count-total">8161</span> results (<span id="count-time"></span>
+                                    seconds)</span>
+                            </div>
+                        </div>
+                        <div class="col-1 ">
+                            <button class="btn primary">Search</button>
+                        </div>
+                        <div class="col-1">
                         </div>
                     </div>
-                    <div class="col-1 ">
-                        <button class="btn primary">Search</button>
-                    </div>
-                    <div class="col-1">
-                    </div>
-                </div>  
-                </form>  
-                                  
+                </form>
+
             </div>
         </div>
     </section>
@@ -41,22 +48,89 @@
             <h2 id="ir-results-title" class="h3 roboto">We think this might answer your question...</h2>
             <div class="custom-grid grid-wpr">
                 <div class="grid-two-thirds flex">
+                    <div class="bg-grey" style="width: 100%; padding: 2%;">
+                        <h4 style="text-align: center;">See Below</h2>
+                        <div class="grid-one-third" style="width: 50%;">
+                            <div style="display: table-cell;
+                            height: 70px;
+                            background: white;
+                            vertical-align: middle;
+                            width: 1%;
+                            text-align: center;">
+                                Here talk about transaction they tried to do before they search
+                            </div>
+                            <div style="margin-top: 5%;
+                            background: white;
+                            padding: 5%;">
+                                <div>
+                                    Which includes:
+                                </div>
+                                <div>
+                                    From:
+                                </div>
+                                <div>
+                                    To:
+                                </div>
+                                <div>
+                                    Amount:
+                                </div>
+                                <div>
+                                    Failed:
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-one-third" style="width: 50%;">
+                            <div style="display: table-cell;
+                            height: 70px;
+                            background: white;
+                            vertical-align: middle;
+                            width: 1%;
+                            text-align: center;">
+                                Suggestion
+                            </div>
+                            <div style="margin-top: 5%;
+                            background: white;
+                            padding: 5%;">
+                                <ol type="1">
+                                    <li>
+                                        <a src="javascript:void(0);" onclick="showOne();">
+                                            How do I move money into my RBC account?
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a src="javascript:void(0);" onclick="showSecound();">
+                                            How do I move money from my TFSA?
+                                        </a>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="custom-grid grid-wpr">
+                <div class="grid-two-thirds flex">
                     <div class="callout bg-grey">
-                        <div id="ir-body" class="callout-content"><h4 id="ir_title">How do I transfer money between my accounts?</h4><p class="ir_content">To transfer money using Online Banking:</p>
+                        <div id="ir-body" class="callout-content">
+                            <h4 id="ir_title">How do I transfer money between my accounts?</h4>
+                            <p class="ir_content">To transfer money using Online Banking:</p>
 
-<ol class="numbered-list mar-l mob-mar-l-dbl">
-<li>Sign in and go to the <strong>Quick Payments &amp; Transfers</strong> section on the right side of the page.</li>
-<li>Choose a <strong>From</strong> and <strong>To</strong> account.</li>
-<li>Enter an amount.</li>
-<li>Click <strong>Submit</strong>.</li>
-<li>Review the transfer details and click <strong>Confirm</strong>.</li>
-</ol>
+                            <ol class="numbered-list mar-l mob-mar-l-dbl">
+                                <li>Sign in and go to the <strong>Quick Payments &amp; Transfers</strong> section on the
+                                    right side of the page.</li>
+                                <li>Choose a <strong>From</strong> and <strong>To</strong> account.</li>
+                                <li>Enter an amount.</li>
+                                <li>Click <strong>Submit</strong>.</li>
+                                <li>Review the transfer details and click <strong>Confirm</strong>.</li>
+                            </ol>
 
-<p class="ir_content">You can also <a href="http://www.rbc.com/mobile/" target="_blank">transfer money with RBC® Mobile<sup>1</sup></a>.</p>
+                            <p class="ir_content">You can also <a href="http://www.rbc.com/mobile/"
+                                    target="_blank">transfer money with RBC® Mobile<sup>1</sup></a>.</p>
 
-<p class="ir_content">&nbsp;</p>
+                            <p class="ir_content">&nbsp;</p>
 
-<p class="ir_content"><sup>1</sup>RBC Mobile is operated by Royal Bank of Canada, RBC Direct Investing Inc. and RBC Dominion Securities Inc.</p>
+                            <p class="ir_content"><sup>1</sup>RBC Mobile is operated by Royal Bank of Canada, RBC Direct
+                                Investing Inc. and RBC Dominion Securities Inc.</p>
                             <ul id="multi-ir" class="display-none mar-b-0"></ul>
 
                             <div id="rating-section" class="rating-section mar-b-dbl">
@@ -73,18 +147,26 @@
                                             <label for="N">No, I'm not satisfied</label>
                                         </fieldset>
                                     </div>
-                                    <div class="grid-one-third pad-l-0 pad-t-hlf">                      
-                                        <button class="btn primary disabled pos-abs desktop-only mar-b-0 submit_reasons" style="bottom:10px;">Submit</button>
-                                        <button class="btn primary disabled mobile-only submit_reasons mar-l-qtr">Submit</button>
+                                    <div class="grid-one-third pad-l-0 pad-t-hlf">
+                                        <button class="btn primary disabled pos-abs desktop-only mar-b-0 submit_reasons"
+                                            style="bottom:10px;">Submit</button>
+                                        <button
+                                            class="btn primary disabled mobile-only submit_reasons mar-l-qtr">Submit</button>
                                     </div>
                                 </div>
                                 <div class="input-wpr reason display-none">
                                     <input type="hidden" id="inquiry-id" value="dfb5e837-191d-11ed-b1a5-1fd3a8f377f9">
                                     <input type="hidden" id="ir-id" value="2095">
                                     <label class="text-bold">Sorry about that. How can we improve it?</label>
-                                    <span id="error-reasons" class="error-msg"><span class="offscreen">Error: </span>Invalid Message</span>
-                                    <textarea id="reasons" name="reasons" class="w-100" maxlength="250" style="min-height:80px" spellcheck="false" data-ms-editor="true"></textarea><span class="counter" aria-live="polite">Max Character: 0/250</span>
-                                    <span class="subcopy">Do not include personal details such as account numbers, login information or passwords. Please limit your response to 250 characters (including spaces).</span>
+                                    <span id="error-reasons" class="error-msg"><span class="offscreen">Error:
+                                        </span>Invalid Message</span>
+                                    <textarea id="reasons" name="reasons" class="w-100" maxlength="250"
+                                        style="min-height:80px" spellcheck="false"
+                                        data-ms-editor="true"></textarea><span class="counter" aria-live="polite">Max
+                                        Character: 0/250</span>
+                                    <span class="subcopy">Do not include personal details such as account numbers, login
+                                        information or passwords. Please limit your response to 250 characters
+                                        (including spaces).</span>
                                 </div>
                             </div>
 
@@ -105,7 +187,16 @@
                         <div class="callout-content">
                             <h4>Related Questions</h4>
                             <ul class="chevron-list" id="ir-related">
-                            <li><a class="rel-link" href="?IR_INTERFACE_ID=5&amp;id=2091&amp;type=1&amp;question=How+do+I+set+up+an+automatic+transfer+between+my+accounts?">How do I set up an automatic transfer between my accounts?</a></li><li><a class="rel-link" href="?IR_INTERFACE_ID=5&amp;id=2096&amp;type=1&amp;question=How+do+I+send+money+to+another+person?">How do I send money to another person?</a></li><li><a class="rel-link" href="?IR_INTERFACE_ID=5&amp;id=5261&amp;type=1&amp;question=How+do+I+reactivate+my+account?">How do I reactivate my account?</a></li></ul>
+                                <li><a class="rel-link"
+                                        href="?IR_INTERFACE_ID=5&amp;id=2091&amp;type=1&amp;question=How+do+I+set+up+an+automatic+transfer+between+my+accounts?">How
+                                        do I set up an automatic transfer between my accounts?</a></li>
+                                <li><a class="rel-link"
+                                        href="?IR_INTERFACE_ID=5&amp;id=2096&amp;type=1&amp;question=How+do+I+send+money+to+another+person?">How
+                                        do I send money to another person?</a></li>
+                                <li><a class="rel-link"
+                                        href="?IR_INTERFACE_ID=5&amp;id=5261&amp;type=1&amp;question=How+do+I+reactivate+my+account?">How
+                                        do I reactivate my account?</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -113,4 +204,5 @@
         </div>
     </section>
 </body>
+
 </html>
