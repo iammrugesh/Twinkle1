@@ -51,349 +51,387 @@
             </div>
         </div>
     </section>
+
+    <!-- //Personalized panel -->
     <section id="ir-results" class="">
         <div class="section-inner pad-b-0 mob-pad-b-dbl">
-            <h2 id="ir-results-title" class="h3 roboto">We think this might answer your question...</h2>
+
+            <h2 id="ir-results-title" class="h3 roboto">
+                <% if (typeof issecond !=='undefined' && issecond==1) { %>
+                    We think this might answer your question...
+                    <% } else{%>
+                        Looking at some of your recent interactions with us. We have the following suggestions.
+                        <% } %>
+            </h2>
+
             <div class="custom-grid grid-wpr">
-                <div class="grid-two-thirds flex">
-                    <div class="bg-grey" style="width: 100%; padding: 2%;">
+                <div>
+                    <div class="grid-two-thirds flex">
+                        <% if (typeof issecond !=='undefined' && issecond==2) { %>
+                        <div class="bg-grey" style="width: 100%; padding: 2%;">
 
-                        
 
-                        <h4 style="text-align: center; font-weight: bold;">See Below</h2>
                             <div class="grid-one-third" style="width: 50%;">
-                                 <div style="display: table-cell;
-                            height: 70px;
-                            font-weight: bold;
-                            vertical-align: middle;
-                            width: 1%;
-                            text-align: center;">
+                                <h4
+                                    style="display: table-cell; height: 70px; vertical-align: middle; width: 1%; text-align: center; font-family: RBCDisplay; font-weight: 500; font-style: normal;">
                                     We noticed you were trying to do this transaction before.
-                                </div> 
-                              
-                                <div style="margin-top: 5%;
-                            background: white;
-                            padding: 5%;">
-                                   
-                                   <ul>
-                                    <li><span>From: </span> TFSA </li>
-                                    <li><span>To: </span> Saving </li>
-                                    <li><span>Amount: </span> $2000</li>
-                                    <li><span>Failed: </span> Reason</li>
-                                  </ul>
+                                </h4>
+
+                                <div style="margin-top: 5%; background: white; padding: 5%;">
+
+                                    <ul>
+                                        <li><span style="font-weight: 600;">From: </span> Chequing </li>
+                                        <li><span style="font-weight: 600;">To: </span> US Bank Account </li>
+                                        <li><span style="font-weight: 600;">Amount: </span> $2,000</li>
+                                        <li><span style="font-weight: 600;">Failed: </span> You don't have
+                                            sufficient balance in your Chequing account.</li>
+                                    </ul>
                                 </div>
                             </div>
                             <div class="grid-one-third" style="width: 50%;">
-                                <div style="display: table-cell;
-                            height: 70px;
-                            font-weight: bold;
-                            vertical-align: middle;
-                            width: 1%;
-                            text-align: center;">
+                                <h4
+                                    style="display: table-cell; height: 70px;  vertical-align: middle; width: 1%; text-align: center; font-family: RBCDisplay; font-weight: 500; font-style: normal;">
                                     Suggestions
-                                </div>
-                              
-                                <div style="margin-top: 5%;
-                            background: white;
-                            padding: 5%;">
+                                </h4>
+
+                                <div style="margin-top: 5%; background: white; padding: 5%;">
                                     <ol type="1">
                                         <li>
                                             <a src="javascript:void(0);" onclick="showOne();">
-                                                How do I move money into my RBC account?
+                                                1) How do I move money into my RBC account?
                                             </a>
                                         </li>
                                         <li>
-                                            <a src="javascript:void(0);" onclick="showSecond();">
-                                                How do I move money from my TFSA?
+                                            <a src="javascript:void(0);" style="font-weight: 600;"
+                                                onclick="showSecond(); ">
+                                                2) You have some money in your TFSA account. Do you want to move
+                                                from there?
                                             </a>
+                                            <div style="font-size: small; font-family: RBCDisplay;">
+                                                *It is going to take 24 hours.
+                                            </div>
                                         </li>
                                     </ol>
                                 </div>
                             </div>
+                        </div>
+                        <% } %>
+                        <% if (typeof data_general !=='undefined' && data_general) { %>
+                            <div class=" callout bg-grey">
+
+                                <div id="ir-body" class="callout-content">
+                                    <h4 id="ir_title">
+                                        <%= data_general[0].title%>
+                                    </h4>
+                                    <% if (typeof issecond !=='undefined' && issecond==1) { %>
+                                        <div>
+                                            <p class="ir_content">You can easily transfer money in Online Banking or
+                                                Mobile
+                                                Banking.&nbsp;Here's how:&nbsp;</p>
+
+                                            <p class="ir_content">To transfer money through Online Banking:</p>
+
+                                            <ul class="disc-list">
+                                                <li>From the right side of the Accounts Summary page, click on "More
+                                                    Payment
+                                                    Options" Under Quick Payments &amp; Transfers.</li>
+                                                <li>If the recipient is a Royal Bank customer, you can use our Third
+                                                    Party
+                                                    transfer service by selecting the “Other Royal Bank Customer”
+                                                    option
+                                                    under the “To:” field.</li>
+                                                <li>If the recipient is not a Royal Bank customer, transfer funds
+                                                    between
+                                                    banks using <i>Interac</i> e-Transfer ‡, a quick, easy and
+                                                    convenient
+                                                    way to send money anywhere in Canada.</li>
+                                            </ul>
+
+                                            <p class="ir_content">If you are not an RBC Royal Bank® Online Banking
+                                                user,
+                                                you
+                                                can enrol <a
+                                                    href="https://www1.royalbank.com/cgi-bin/rbaccess/rbunxcgi?F6=1&amp;F7=IB&amp;F21=IB&amp;F22=HT&amp;REQUEST=IBOnlineEnrollLink&amp;LANGUAGE=ENGLISH&amp;SPAGE=onlinenav1e "
+                                                    target="_blank">here</a> or call us 24 hours a day at<a
+                                                    href="tel:18007692555">1-800-769-2555</a> to speak with a
+                                                Digital
+                                                Advisor.</p>
+
+                                            <p class="ir_content"><input name="LineOfBusiness" type="hidden"
+                                                    value="everyday_banking"></p>
+                                            <ul id="multi-ir" class="display-none mar-b-0"></ul>
+
+                                            <div id="rating-section" class="rating-section mar-b-dbl">
+                                                <div class="divider"></div>
+
+                                                <h4>Are you satisfied with this answer?</h4>
+                                                <div class="grid-wpr eh-wpr">
+                                                    <div class="grid-two-thirds pad-r-0">
+                                                        <fieldset class="radio-wpr horizontal">
+                                                            <legend></legend>
+                                                            <input type="radio" id="Y" name="satisfied" value="100">
+                                                            <label for="Y">Yes, I'm satisfied</label>
+                                                            <input type="radio" id="N" name="satisfied" value="1">
+                                                            <label for="N">No, I'm not satisfied</label>
+                                                        </fieldset>
+                                                    </div>
+                                                    <div class="grid-one-third pad-l-0 pad-t-hlf">
+                                                        <button
+                                                            class="btn primary disabled pos-abs desktop-only mar-b-0 submit_reasons"
+                                                            style="bottom:10px;">Submit</button>
+                                                        <button
+                                                            class="btn primary disabled mobile-only submit_reasons mar-l-qtr">Submit</button>
+                                                    </div>
+                                                </div>
+                                                <div class="input-wpr reason display-none">
+                                                    <input type="hidden" id="inquiry-id"
+                                                        value="7933ad52-1fd8-11ed-b1a5-755b5cce5b07">
+                                                    <input type="hidden" id="ir-id" value="2094">
+                                                    <label class="text-bold">Sorry about that. How can we improve
+                                                        it?</label>
+                                                    <span id="error-reasons" class="error-msg"><span
+                                                            class="offscreen">Error:
+                                                        </span>Invalid Message</span>
+                                                    <textarea id="reasons" name="reasons" class="w-100" maxlength="250"
+                                                        style="min-height:80px"></textarea><span class="counter"
+                                                        aria-live="polite">Max Character:
+                                                        0/250</span>
+                                                    <span class="subcopy">Do not include personal details such as
+                                                        account
+                                                        numbers, login information or passwords. Please limit your
+                                                        response
+                                                        to 250 characters (including spaces).</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="display-none" id="thank-you">
+                                                <div class="divider"></div>
+                                                <h4 class="text-bold">Thank you!</h4>
+                                                <span>We appreciate your feedback.</span>
+                                            </div>
+                                            <div id="error-rating" class="display-none">
+                                                <div class="divider"></div>
+                                                <h4>Sorry, we're having technical issues at the moment. Please try
+                                                    again
+                                                    later.</h4>
+                                            </div>
+                                        </div>
+                                        <% }else{ %>
+
+                                            <div>
+
+                                                <p class="ir_content">To transfer money using Online Banking:</p>
+
+                                                <ol class="numbered-list mar-l mob-mar-l-dbl">
+                                                    <li>Sign in and go to the <strong>Quick Payments &amp;
+                                                            Transfers</strong> section on the right side of the
+                                                        page.</li>
+                                                    <li>Choose a <strong>From</strong> and <strong>To</strong>
+                                                        account.</li>
+                                                    <li>Enter an amount.</li>
+                                                    <li>Click <strong>Submit</strong>.</li>
+                                                    <li>Review the transfer details and click
+                                                        <strong>Confirm</strong>.
+                                                    </li>
+                                                </ol>
+
+                                                <p class="ir_content">You can also <a href="http://www.rbc.com/mobile/"
+                                                        target="_blank">transfer
+                                                        money with RBC® Mobile<sup>1</sup></a>.</p>
+
+                                                <p class="ir_content">&nbsp;</p>
+
+                                                <p class="ir_content"><sup>1</sup>RBC Mobile is operated by Royal
+                                                    Bank of
+                                                    Canada, RBC Direct Investing Inc. and RBC Dominion Securities
+                                                    Inc.</p>
+                                                <ul id="multi-ir" class="display-none mar-b-0"></ul>
+
+                                                <div id="rating-section" class="rating-section mar-b-dbl">
+                                                    <div class="divider"></div>
+
+                                                    <h4>Are you satisfied with this answer?</h4>
+                                                    <div class="grid-wpr eh-wpr">
+                                                        <div class="grid-two-thirds pad-r-0">
+                                                            <fieldset class="radio-wpr horizontal">
+                                                                <legend></legend>
+                                                                <input type="radio" id="Y" name="satisfied" value="100">
+                                                                <label for="Y">Yes, I'm satisfied</label>
+                                                                <input type="radio" id="N" name="satisfied" value="1">
+                                                                <label for="N">No, I'm not satisfied</label>
+                                                            </fieldset>
+                                                        </div>
+                                                        <div class="grid-one-third pad-l-0 pad-t-hlf">
+                                                            <button
+                                                                class="btn primary disabled pos-abs desktop-only mar-b-0 submit_reasons"
+                                                                style="bottom:10px;">Submit</button>
+                                                            <button
+                                                                class="btn primary disabled mobile-only submit_reasons mar-l-qtr">Submit</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-wpr reason display-none">
+                                                        <input type="hidden" id="inquiry-id"
+                                                            value="43293f88-23db-11ed-b1a5-33b4b9023a20">
+                                                        <input type="hidden" id="ir-id" value="2095">
+                                                        <label class="text-bold">Sorry about that. How can we
+                                                            improve
+                                                            it?</label>
+                                                        <span id="error-reasons" class="error-msg"><span
+                                                                class="offscreen">Error: </span>Invalid
+                                                            Message</span>
+                                                        <textarea id="reasons" name="reasons" class="w-100"
+                                                            maxlength="250" style="min-height:80px"></textarea><span
+                                                            class="counter" aria-live="polite">Max Character:
+                                                            0/250</span>
+                                                        <span class="subcopy">Do not include personal details such
+                                                            as
+                                                            account numbers, login information or passwords. Please
+                                                            limit
+                                                            your response to 250 characters (including
+                                                            spaces).</span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="display-none" id="thank-you">
+                                                    <div class="divider"></div>
+                                                    <h4 class="text-bold">Thank you!</h4>
+                                                    <span>We appreciate your feedback.</span>
+                                                </div>
+                                                <div id="error-rating" class="display-none">
+                                                    <div class="divider"></div>
+                                                    <h4>Sorry, we're having technical issues at the moment. Please
+                                                        try again
+                                                        later.</h4>
+                                                </div>
+                                            </div>
+                                            <%}%>
+                                </div>
+                            </div>
+                            <% } %>
                     </div>
                 </div>
-
-
-                <div class="grid-one-third mar-b-0 flex">
-                    <div class="callout" id="related">
-                        <div class="callout-content">
-                            <h4>Related Questions</h4>
-                            <ul class="chevron-list" id="ir-related">
-                                <li><a class="rel-link"
-                                        href="https://www.rbc.com/search-rbc/index.html?IR_INTERFACE_ID=5&id=2091&type=1&question=How+do+I+set+up+an+automatic+transfer+between+my+accounts?">How
-                                        do I set up an automatic transfer between my accounts?</a></li>
-                                <li><a class="rel-link"
-                                        href="http://localhost:3000/?IR_INTERFACE_ID=5&id=2096&type=1&question=How+do+I+send+money+to+another+person?">How
-                                        do I send money to another person?</a></li>
-                                <li><a class="rel-link"
-                                        href="http://localhost:3000/?IR_INTERFACE_ID=5&id=5261&type=1&question=How+do+I+reactivate+my+account?">How
-                                        do I reactivate my account?</a></li>
-                            </ul>
+                <div>
+                    <div class="grid-one-third mar-b-0 flex">
+                        <div class="callout" id="related">
+                            <div class="callout-content">
+                                <h4>Related Questions</h4>
+                                <ul class="chevron-list" id="ir-related">
+                                    <li><a class="rel-link"
+                                            href="https://www.rbc.com/search-rbc/index.html?IR_INTERFACE_ID=5&id=2091&type=1&question=How+do+I+set+up+an+automatic+transfer+between+my+accounts?">How
+                                            do I set up an automatic transfer between my accounts?</a></li>
+                                    <li><a class="rel-link"
+                                            href="http://localhost:5000/?IR_INTERFACE_ID=5&id=2096&type=1&question=How+do+I+send+money+to+another+person?">How
+                                            do I send money to another person?</a></li>
+                                    <li><a class="rel-link"
+                                            href="http://localhost:5000/?IR_INTERFACE_ID=5&id=5261&type=1&question=How+do+I+reactivate+my+account?">How
+                                            do I reactivate my account?</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
 
-            <% if (typeof data_general !=='undefined' && data_general.length) { %>
-                <!-- default div-->
-                <div class="custom-grid grid-wpr" id="default">
-                    <div class="grid-two-thirds flex">
-                        <div class="callout bg-grey">
-                            <div id="ir-body" class="callout-content">
-                                <h4 id="ir_title">
-                                    <%= data_general[0].title%>
-                                </h4>
-                                <p class="ir_content">You can easily transfer money in Online Banking or Mobile
-                                    Banking.&nbsp;Here's how:&nbsp;</p>
 
-                                <p class="ir_content">To transfer money through Online Banking:</p>
+        </div>
 
-                                <ul class="disc-list">
-                                    <li>From the right side of the Accounts Summary page, click on "More Payment
-                                        Options" Under Quick Payments &amp; Transfers.</li>
-                                    <li>If the recipient is a Royal Bank customer, you can use our Third Party
-                                        transfer service by selecting the “Other Royal Bank Customer” option
-                                        under the “To:” field.</li>
-                                    <li>If the recipient is not a Royal Bank customer, transfer funds between
-                                        banks using <i>Interac</i> e-Transfer ‡, a quick, easy and convenient
-                                        way to send money anywhere in Canada.</li>
-                                </ul>
 
-                                <p class="ir_content">If you are not an RBC Royal Bank® Online Banking user, you
-                                    can enrol <a
-                                        href="https://www1.royalbank.com/cgi-bin/rbaccess/rbunxcgi?F6=1&amp;F7=IB&amp;F21=IB&amp;F22=HT&amp;REQUEST=IBOnlineEnrollLink&amp;LANGUAGE=ENGLISH&amp;SPAGE=onlinenav1e "
-                                        target="_blank">here</a> or call us 24 hours a day at<a
-                                        href="tel:18007692555">1-800-769-2555</a> to speak with a Digital
-                                    Advisor.</p>
+        <!-- suggestion 1 div -->
+        <div class="custom-grid grid-wpr" id="suggestion1" style="display:none;">
+            <div class="grid-two-thirds flex">
+                <div class="callout bg-grey">
+                    <div id="ir-body" class="callout-content">
+                        <h4 id="ir_title">How do I set up an automatic transfer between my accounts?</h4>
+                        <p class="ir_content"><strong>Online Banking</strong></p>
 
-                                <p class="ir_content"><input name="LineOfBusiness" type="hidden"
-                                        value="everyday_banking"></p>
-                                <ul id="multi-ir" class="display-none mar-b-0"></ul>
+                        <p class="ir_content">You can set up automatic transfers between your accounts with
+                            Online Banking, here's how:</p>
 
-                                <div id="rating-section" class="rating-section mar-b-dbl">
-                                    <div class="divider"></div>
+                        <ol class="numbered-list mar-l mob-mar-l-dbl">
+                            <li>From the right side of the Accounts Summary page, select <strong>Pay Bills &amp;
+                                    Transfer Funds</strong></li>
+                            <li>Fill in the desired transaction information</li>
+                            <li>Select the desired future start date for the scheduled payment(s)</li>
+                            <li>If you would like to make only one payment, make sure "Once" is selected. If you
+                                would like to make more than one payment, select the frequency and fill in the
+                                required information</li>
+                            <li>Click "Next”</li>
+                            <li>Review the Transfer Details&nbsp;and click <strong>Transfer Now</strong></li>
+                        </ol>
 
-                                    <h4>Are you satisfied with this answer?</h4>
-                                    <div class="grid-wpr eh-wpr">
-                                        <div class="grid-two-thirds pad-r-0">
-                                            <fieldset class="radio-wpr horizontal">
-                                                <legend></legend>
-                                                <input type="radio" id="Y" name="satisfied" value="100">
-                                                <label for="Y">Yes, I'm satisfied</label>
-                                                <input type="radio" id="N" name="satisfied" value="1">
-                                                <label for="N">No, I'm not satisfied</label>
-                                            </fieldset>
-                                        </div>
-                                        <div class="grid-one-third pad-l-0 pad-t-hlf">
-                                            <button
-                                                class="btn primary disabled pos-abs desktop-only mar-b-0 submit_reasons"
-                                                style="bottom:10px;">Submit</button>
-                                            <button
-                                                class="btn primary disabled mobile-only submit_reasons mar-l-qtr">Submit</button>
-                                        </div>
-                                    </div>
-                                    <div class="input-wpr reason display-none">
-                                        <input type="hidden" id="inquiry-id"
-                                            value="7933ad52-1fd8-11ed-b1a5-755b5cce5b07">
-                                        <input type="hidden" id="ir-id" value="2094">
-                                        <label class="text-bold">Sorry about that. How can we improve
-                                            it?</label>
-                                        <span id="error-reasons" class="error-msg"><span class="offscreen">Error:
-                                            </span>Invalid Message</span>
-                                        <textarea id="reasons" name="reasons" class="w-100" maxlength="250"
-                                            style="min-height:80px"></textarea><span class="counter"
-                                            aria-live="polite">Max Character: 0/250</span>
-                                        <span class="subcopy">Do not include personal details such as account
-                                            numbers, login information or passwords. Please limit your response
-                                            to 250 characters (including spaces).</span>
-                                    </div>
+                        <p class="ir_content"><strong>Mobile Banking</strong></p>
+
+                        <ol class="numbered-list mar-l mob-mar-l-dbl">
+                            <li>Tap Move Money in the Navigation Bar</li>
+                            <li>Tap Transfer Between My Accounts</li>
+                            <li>Tap Frequency and select an option</li>
+                            <li>Follow the on-screen instructions</li>
+                        </ol>
+
+                        <p class="ir_content"><a href="https://rbcdemo.com/en/registered/course/step/move-money-ios/ios"
+                                target="_blank">See</a> what it's like to transfer money between accounts on the
+                            RBC Mobile app.</p>
+
+                        <p class="ir_content">&nbsp;</p>
+
+                        <p class="ir_content"><input name="LineOfBusiness" type="hidden" value="everyday_banking"></p>
+                        <ul id="multi-ir" class="display-none mar-b-0"></ul>
+
+                        <div id="rating-section" class="rating-section mar-b-dbl">
+                            <div class="divider"></div>
+
+                            <h4>Are you satisfied with this answer?</h4>
+                            <div class="grid-wpr eh-wpr">
+                                <div class="grid-two-thirds pad-r-0">
+                                    <fieldset class="radio-wpr horizontal">
+                                        <legend></legend>
+                                        <input type="radio" id="Y" name="satisfied" value="100">
+                                        <label for="Y">Yes, I'm satisfied</label>
+                                        <input type="radio" id="N" name="satisfied" value="1">
+                                        <label for="N">No, I'm not satisfied</label>
+                                    </fieldset>
                                 </div>
-
-                                <div class="display-none" id="thank-you">
-                                    <div class="divider"></div>
-                                    <h4 class="text-bold">Thank you!</h4>
-                                    <span>We appreciate your feedback.</span>
+                                <div class="grid-one-third pad-l-0 pad-t-hlf">
+                                    <button class="btn primary disabled pos-abs desktop-only mar-b-0 submit_reasons"
+                                        style="bottom:10px;">Submit</button>
+                                    <button
+                                        class="btn primary disabled mobile-only submit_reasons mar-l-qtr">Submit</button>
                                 </div>
-                                <div id="error-rating" class="display-none">
-                                    <div class="divider"></div>
-                                    <h4>Sorry, we're having technical issues at the moment. Please try again
-                                        later.</h4>
-                                </div>
+                            </div>
+                            <div class="input-wpr reason display-none">
+                                <input type="hidden" id="inquiry-id" value="7e8c4c70-1fec-11ed-b1a5-3d3f87942426">
+                                <input type="hidden" id="ir-id" value="2091">
+                                <label class="text-bold">Sorry about that. How can we improve it?</label>
+                                <span id="error-reasons" class="error-msg"><span class="offscreen">Error:
+                                    </span>Invalid Message</span>
+                                <textarea id="reasons" name="reasons" class="w-100" maxlength="250"
+                                    style="min-height:80px"></textarea><span class="counter" aria-live="polite">Max
+                                    Character: 0/250</span>
+                                <span class="subcopy">Do not include personal details such as account numbers,
+                                    login information or passwords. Please limit your response to 250 characters
+                                    (including spaces).</span>
                             </div>
                         </div>
-                    </div>
-                    
-                                <h4 id="ir_title">
-                                    <%= data_general[0].title%>
-                                </h4>
 
-                                <%= data_general[0].description%>
-
-                                    <p class="ir_content">&nbsp;</p>
-
-                                    <p class="ir_content"><sup>1</sup>RBC Mobile is operated by Royal Bank of Canada,
-                                        RBC
-                                        Direct
-                                        Investing Inc. and RBC Dominion Securities Inc.</p>
-                                    <ul id="multi-ir" class="display-none mar-b-0"></ul>
-
-                                    <div id="rating-section" class="rating-section mar-b-dbl">
-                                        <div class="divider"></div>
-
-                                        <h4>Are you satisfied with this answer?</h4>
-                                        <div class="grid-wpr eh-wpr">
-                                            <div class="grid-two-thirds pad-r-0">
-                                                <fieldset class="radio-wpr horizontal">
-                                                    <legend></legend>
-                                                    <input type="radio" id="Y" name="satisfied" value="100">
-                                                    <label for="Y">Yes, I'm satisfied</label>
-                                                    <input type="radio" id="N" name="satisfied" value="1">
-                                                    <label for="N">No, I'm not satisfied</label>
-                                                </fieldset>
-                                            </div>
-                                            <div class="grid-one-third pad-l-0 pad-t-hlf">
-                                                <button
-                                                    class="btn primary disabled pos-abs desktop-only mar-b-0 submit_reasons"
-                                                    style="bottom:10px;">Submit</button>
-                                                <button
-                                                    class="btn primary disabled mobile-only submit_reasons mar-l-qtr">Submit</button>
-                                            </div>
-                                        </div>
-                                        <div class="input-wpr reason display-none">
-                                            <input type="hidden" id="inquiry-id"
-                                                value="dfb5e837-191d-11ed-b1a5-1fd3a8f377f9">
-                                            <input type="hidden" id="ir-id" value="2095">
-                                            <label class="text-bold">Sorry about that. How can we improve it?</label>
-                                            <span id="error-reasons" class="error-msg"><span class="offscreen">Error:
-                                                </span>Invalid Message</span>
-                                            <textarea id="reasons" name="reasons" class="w-100" maxlength="250"
-                                                style="min-height:80px" spellcheck="false"
-                                                data-ms-editor="true"></textarea><span class="counter"
-                                                aria-live="polite">Max
-                                                Character: 0/250</span>
-                                            <span class="subcopy">Do not include personal details such as account
-                                                numbers,
-                                                login
-                                                information or passwords. Please limit your response to 250 characters
-                                                (including spaces).</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="display-none" id="thank-you">
-                                        <div class="divider"></div>
-                                        <h4 class="text-bold">Thank you!</h4>
-                                        <span>We appreciate your feedback.</span>
-                                    </div>
-                                    <div id="error-rating" class="display-none">
-                                        <div class="divider"></div>
-                                        <h4>Sorry, we're having technical issues at the moment. Please try again later.
-                                        </h4>
-                                    </div>
-                            </div> -->
-                    <% } %>
-                </div>
-
-                <!-- suggestion 1 div -->
-                <div class="custom-grid grid-wpr" id="suggestion1" style="display:none;">
-                    <div class="grid-two-thirds flex">
-                        <div class="callout bg-grey">
-                            <div id="ir-body" class="callout-content">
-                                <h4 id="ir_title">How do I set up an automatic transfer between my accounts?</h4>
-                                <p class="ir_content"><strong>Online Banking</strong></p>
-
-                                <p class="ir_content">You can set up automatic transfers between your accounts with
-                                    Online Banking, here's how:</p>
-
-                                <ol class="numbered-list mar-l mob-mar-l-dbl">
-                                    <li>From the right side of the Accounts Summary page, select <strong>Pay Bills &amp;
-                                            Transfer Funds</strong></li>
-                                    <li>Fill in the desired transaction information</li>
-                                    <li>Select the desired future start date for the scheduled payment(s)</li>
-                                    <li>If you would like to make only one payment, make sure "Once" is selected. If you
-                                        would like to make more than one payment, select the frequency and fill in the
-                                        required information</li>
-                                    <li>Click "Next”</li>
-                                    <li>Review the Transfer Details&nbsp;and click <strong>Transfer Now</strong></li>
-                                </ol>
-
-                                <p class="ir_content"><strong>Mobile Banking</strong></p>
-
-                                <ol class="numbered-list mar-l mob-mar-l-dbl">
-                                    <li>Tap Move Money in the Navigation Bar</li>
-                                    <li>Tap Transfer Between My Accounts</li>
-                                    <li>Tap Frequency and select an option</li>
-                                    <li>Follow the on-screen instructions</li>
-                                </ol>
-
-                                <p class="ir_content"><a
-                                        href="https://rbcdemo.com/en/registered/course/step/move-money-ios/ios"
-                                        target="_blank">See</a> what it's like to transfer money between accounts on the
-                                    RBC Mobile app.</p>
-
-                                <p class="ir_content">&nbsp;</p>
-
-                                <p class="ir_content"><input name="LineOfBusiness" type="hidden"
-                                        value="everyday_banking"></p>
-                                <ul id="multi-ir" class="display-none mar-b-0"></ul>
-
-                                <div id="rating-section" class="rating-section mar-b-dbl">
-                                    <div class="divider"></div>
-
-                                    <h4>Are you satisfied with this answer?</h4>
-                                    <div class="grid-wpr eh-wpr">
-                                        <div class="grid-two-thirds pad-r-0">
-                                            <fieldset class="radio-wpr horizontal">
-                                                <legend></legend>
-                                                <input type="radio" id="Y" name="satisfied" value="100">
-                                                <label for="Y">Yes, I'm satisfied</label>
-                                                <input type="radio" id="N" name="satisfied" value="1">
-                                                <label for="N">No, I'm not satisfied</label>
-                                            </fieldset>
-                                        </div>
-                                        <div class="grid-one-third pad-l-0 pad-t-hlf">
-                                            <button
-                                                class="btn primary disabled pos-abs desktop-only mar-b-0 submit_reasons"
-                                                style="bottom:10px;">Submit</button>
-                                            <button
-                                                class="btn primary disabled mobile-only submit_reasons mar-l-qtr">Submit</button>
-                                        </div>
-                                    </div>
-                                    <div class="input-wpr reason display-none">
-                                        <input type="hidden" id="inquiry-id"
-                                            value="7e8c4c70-1fec-11ed-b1a5-3d3f87942426">
-                                        <input type="hidden" id="ir-id" value="2091">
-                                        <label class="text-bold">Sorry about that. How can we improve it?</label>
-                                        <span id="error-reasons" class="error-msg"><span class="offscreen">Error:
-                                            </span>Invalid Message</span>
-                                        <textarea id="reasons" name="reasons" class="w-100" maxlength="250"
-                                            style="min-height:80px"></textarea><span class="counter"
-                                            aria-live="polite">Max Character: 0/250</span>
-                                        <span class="subcopy">Do not include personal details such as account numbers,
-                                            login information or passwords. Please limit your response to 250 characters
-                                            (including spaces).</span>
-                                    </div>
-                                </div>
-
-                                <div class="display-none" id="thank-you">
-                                    <div class="divider"></div>
-                                    <h4 class="text-bold">Thank you!</h4>
-                                    <span>We appreciate your feedback.</span>
-                                </div>
-                                <div id="error-rating" class="display-none">
-                                    <div class="divider"></div>
-                                    <h4>Sorry, we're having technical issues at the moment. Please try again later.</h4>
-                                </div>
-                            </div>
+                        <div class="display-none" id="thank-you">
+                            <div class="divider"></div>
+                            <h4 class="text-bold">Thank you!</h4>
+                            <span>We appreciate your feedback.</span>
+                        </div>
+                        <div id="error-rating" class="display-none">
+                            <div class="divider"></div>
+                            <h4>Sorry, we're having technical issues at the moment. Please try again later.</h4>
                         </div>
                     </div>
                 </div>
-                <div id="message-icon" onclick="openChatModel();">
-                    <img src="/chat.png" style="height: 60px;">
-                </div>
+            </div>
+        </div>
+        <div id="message-icon" onclick="openChatModel();">
+            <img src="/chat.png" style="height: 60px;">
+        </div>
 
         </div>
-        </div>
+
     </section>
 
     <!--
@@ -406,17 +444,19 @@ Inspired by https://dribbble.com/supahfunk
                 </span></div>
             <div class="button">...</div>
         </div>
-        <div class="agent-face">
+        <!-- <div class="agent-face">
             <div class="half">
                 <img class="agent circle" src="https://logos-download.com/wp-content/uploads/2016/08/RBC_logo.png"
                     alt="Jesse Tino">
             </div>
-        </div>
+        </div> -->
         <div class="chat">
-            <div class="chat-title">
-                <h1>RBC chat</h1>
-                <h2>Twinkle</h2>
+            <!-- <div class="chat-title"> -->
+            <div class="model-img-header">
+                <img src="/mountain.jpg" alt=""
+                    style="width: -webkit-fill-available;border-bottom: 22px solid #ffffff;border-radius: 0 0 30% 30%; height: 170px;">
             </div>
+            <!-- </div> -->
             <div class="messages">
                 <div class="messages-content"></div>
             </div>
@@ -435,59 +475,51 @@ Inspired by https://dribbble.com/supahfunk
                 </span></div>
             <div class="button">...</div>
         </div>
-        <div class="model-img-header" style="display:none;">
-            <img src="/test.png" alt="" style="width: -webkit-fill-available;border-bottom: 22px solid #ffffff;border-radius: 0 0 30% 30%;">
-        </div>
         <div class="chat">
-            <!-- <div>
-                <div>
-                    <div class="message new" style="padding: 6px 10px 7px;"><figure class="avatar"><img src="https://logos-download.com/wp-content/uploads/2016/08/RBC_logo.png"></figure>I can help you to move money from TFSA</div>
-                </div>
-            </div> -->
-            <div class="messages" style="height: 100vh;overflow: auto;">
-                    <div id="first-step" style="background-color: #fff; align-self: center; width: -webkit-fill-available;">
+
+            <div id="first-step" style="background-color: #fff; align-self: center; width: -webkit-fill-available;">
                 <div style=" padding: 30px;">
-                    <h6>I can help you to move money from TFSA.</h6>
+                    <h6>Hello!! I can help you to move money from TFSA.</h6>
                 </div>
 
                 <div style="text-align: center;">
                     <button class="btn primary" type="button" onclick="firstform();">Click Here</button>
                 </div>
 
-                    </div>
+            </div>
             <div id="second-step"
                 style="display: none; background-color: #fff; align-self: center; width: -webkit-fill-available;">
                 <div style=" text-align: center; width: 100%;">
-                   
+
                     <select name="from" style=" width: 60%;  margin-top: 30px;">
                         <option value="Saving">Saving</option>
                         <option value="TFSA" selected>TFSA</option>
-                        <option value="USA account">USA account</option>
+                        <option value="US Bank Account">US Bank Account</option>
                         <option value="Chequing">Chequing</option>
                     </select>
                 </div>
                 <div style="text-align: center; width: 100%;">
-                   
+
                     <select name="to" style=" width: 60%; margin: 10px; ">
                         <option value="Saving" selected>Saving</option>
                         <option value="TFSA">TFSA</option>
-                        <option value="USA account">USA account</option>
+                        <option value="US Bank Account">US Bank Account</option>
                         <option value="Chequing">Chequing</option>
                     </select>
                 </div>
                 <div style=" text-align: center; width: 100%;">
-                    
-                    <input value="$2000" type="text" placeholder="Amount"
-                        style=" width: 60%; margin: 10px; ">
-                    </div>
+
+                    <input value="$2,000" type="text" placeholder="Amount" style=" width: 60%; margin: 10px; ">
+                </div>
                 <div style=" text-align: center; width: 100%;">
-                    <button class="btn primary" type="button"
-                        onclick="secondform();">Transfer
+                    <button class="btn primary" type="button" onclick="secondform();">Transfer
                     </button>
-                    </div>
+                </div>
             </div>
-            <div id="third-step" style="display:none; background-color: #fff; align-self: center; width: -webkit-fill-available;">
-                <p style="padding: 30px 30px 0px 30px;">You have successfully transfer money from your TFSA account to Saving account.</p>
+            <div id="third-step"
+                style="display:none; background-color: #fff; align-self: center; width: -webkit-fill-available;">
+                <p style="padding: 30px 30px 0px 30px;">You have successfully transfer money from your TFSA account to
+                    Saving account.</p>
                 <p style="padding: 0px 0px 30px 30px;">Do you want to move money in your USA accout?</p>
                 <div style=" text-align: center; width: 100%;">
                     <button class="btn primary" type="button" onclick="thirdform('Yes');">Yes</button>
@@ -501,7 +533,7 @@ Inspired by https://dribbble.com/supahfunk
                     <select name="from" style=" width: 60%;  margin-top: 30px;">
                         <option value="Saving">Saving</option>
                         <option value="TFSA">TFSA</option>
-                        <option value="USA account">USA account</option>
+                        <option value="US Bank Account">US Bank Account</option>
                         <option value="Chequing" selected>Chequing</option>
                     </select>
                 </div>
@@ -510,20 +542,21 @@ Inspired by https://dribbble.com/supahfunk
                     <select name="to" style=" width: 60%; margin: 10px; ">
                         <option value="Saving">Saving</option>
                         <option value="TFSA">TFSA</option>
-                        <option value="USA account" selected>USA account</option>
+                        <option value="US Bank Account" selected>US Bank Account</option>
                         <option value="Chequing">Chequing</option>
                     </select>
                 </div>
-                <div style=" text-align: center; width: 100%;"><input value="$2000" type="text" placeholder="Amount"
+                <div style=" text-align: center; width: 100%;"><input value="$2,000" type="text" placeholder="Amount"
                         style=" width: 60%; margin: 10px; "></div>
                 <div style=" text-align: center; width: 100%;"><button class="btn primary" type="button"
                         onclick="fourthform();">Transfer</button></div>
             </div>
             <div id="fifth-step" style="display: none; text-align: center;">
-                <h6 style="padding: 30px 30px 0px 30px;">You have successfully transfer money to your USA account.</h6>
-                
+                <h6 style="padding: 30px 30px 0px 30px;">You have successfully transfer money to your US Bank Account.
+                </h6>
+
             </div>
-            <div id="feedback" style="display: none; background-color: #fff; padding-bottom: 50px;" onclick="thankyou();">
+            <div id="feedback" style="display: none; background-color: #fff;">
                 <div style="text-align: center; padding-top: 30px;">
                     <h6>
                         Thank you.!! Please rate us.
@@ -715,7 +748,6 @@ Inspired by https://dribbble.com/supahfunk
                     </h6>
                 </div>
             </div>
-            </div>
         </div>
         </div>
     </section>
@@ -728,7 +760,6 @@ Inspired by https://dribbble.com/supahfunk
 
     function closeChatModel() {
         $('#model-chat').hide();
-        $('#model-form').hide();
         $('#message-icon').show();
         // $('#endChat').show();
     }
@@ -743,37 +774,119 @@ Inspired by https://dribbble.com/supahfunk
         $('#default').hide();
     }
     function showSecond() {
-        $('#model-form').show();
-        $('.model-img-header').show();
+        $('#model-form').hide();
         $('#message-icon').hide();
-        $('#model-chat').hide();
+        $('#model-chat').show();
     }
     function firstform() {
 
         $('#second-step').show();
-        // $('#first-step').hide();
+        $('#first-step').hide();
     }
     function secondform() {
         // $('#second-step').hide();
-        $('#third-step').show();
+        //  $('#third-step').show();
+        insertMessage('Transfer');
+        $('#second-step').addClass('form_disable');
+        $('<div class="message loading new"><figure class="avatar"><img src="https://logos-download.com/wp-content/uploads/2016/08/RBC_logo.png" /></figure><span></span></div>').appendTo($('.mCSB_container'));
+        setTimeout(function () {
+            $('.message.loading').remove();
+            $('<div class="message new" style="padding: 6px 10px 7px;"><figure class="avatar"><img src="https://logos-download.com/wp-content/uploads/2016/08/RBC_logo.png" /></figure>' + Fake[1] + '</div>').appendTo($('.mCSB_container')).addClass('new');
+            $('<div class="message loading new"><figure class="avatar"><img src="https://logos-download.com/wp-content/uploads/2016/08/RBC_logo.png" /></figure><span></span></div>').appendTo($('.mCSB_container'));
+            setTimeout(function () {
+                $('.message.loading').remove();
+                $('<div class="message new" style="padding: 6px 10px 7px;"><figure class="avatar"><img src="https://logos-download.com/wp-content/uploads/2016/08/RBC_logo.png" /></figure>' + Fake[5] + '</div>').appendTo($('.mCSB_container')).addClass('new');
+                $('<div class="message loading new"><figure class="avatar"><img src="https://logos-download.com/wp-content/uploads/2016/08/RBC_logo.png" /></figure><span></span></div>').appendTo($('.mCSB_container'));
+                setTimeout(function () {
+                    $('.message.loading').remove();
+                    $('<div class="message new"><figure class="avatar"><img src="https://logos-download.com/wp-content/uploads/2016/08/RBC_logo.png" /></figure>' + ' <div id="third-step" style=" background-color: #fff; align-self: center; width: 220px; border-radius: 20px 20px 20px 0;"><p style="padding: 10px 10px 1px 10px; margin: 0px;">Do you want to move money in your USA accout?</p><div style=" text-align: center; width: 100%;"><button class="btn primary" type="button" onclick="thirdform(\'Yes\');">Yes</button> <button class="btn primary" type="button" onclick="thirdform(\'No\')">No</button></div><div>*Don\'t forget this transfer will be schedule for 24 hours</div> </div>' + '</div>').appendTo($('.mCSB_container')).addClass('new');
+                    setDate();
+                    updateScrollbar();
+                    i++;
+                }, 2500);
+            }, 2500);
+        }, 2500);
+
+
     }
     function thirdform(a) {
-        // $('#third-step').hide();
+        //  $('#third-step').hide();
+
         if (a == 'Yes') {
-            $('#fourth-step').show();
+            // $('#fourth-step').show();
+            insertMessage('Yes');
+            $('#third-step').addClass('form_disable');
+            $('<div class="message loading new"><figure class="avatar"><img src="https://logos-download.com/wp-content/uploads/2016/08/RBC_logo.png" /></figure><span></span></div>').appendTo($('.mCSB_container'));
+            setTimeout(function () {
+                $('.message.loading').remove();
+                $('<div class="message new"><figure class="avatar"><img src="https://logos-download.com/wp-content/uploads/2016/08/RBC_logo.png" /></figure>' + '<div id="fourth-step"  style="align-self: center; width: 220px; border-radius: 20px 20px 20px 0; background-color: #fff;"><div style=" text-align: center; width: 100%;"><select name="from" style=" width: -webkit-fill-available; border-top: white;border-left: white;border-right: white"><option value="Saving">Saving</option> <option value="TFSA">TFSA</option> <option value="US Bank Account">US Bank Account</option> <option value="Chequing" selected>Chequing</option></select>  </div>  <div style="text-align: center; width: 100%;"> <select name="to" style=" width: -webkit-fill-available; border-top: white;border-left: white;border-right: white"> <option value="Saving" selected>Saving</option> <option value="TFSA">TFSA</option> <option value="US Bank Account" selected>US Bank Account</option>  <option value="Chequing">Chequing</option> </select>  </div> <div style="  width: -webkit-fill-available; border-top: white;border-left: white;border-right: white; "> <input value="$2,000" type="text" placeholder="Amount" style=" width: -webkit-fill-available; border-top: white;border-left: white;border-right: white"></div> <div style=" text-align: center; width: 100%;"> <button class="btn primary" type="button" onclick="fourthform();" style="width:-webkit-fill-available; margin-top:10px; margin-bottom: 10px;">Transfer </button></div> </div>' + '</div>').appendTo($('.mCSB_container')).addClass('new');
+
+                setDate();
+                updateScrollbar();
+                i++;
+            }, 2500);
+
+
         }
         else {
-            $('#feedback').show();
+            insertMessage('No')
+            $('#third-step').addClass('form_disable');
+            $('<div class="message loading new"><figure class="avatar"><img src="https://logos-download.com/wp-content/uploads/2016/08/RBC_logo.png" /></figure><span></span></div>').appendTo($('.mCSB_container'));
+            setTimeout(function () {
+                $('.message.loading').remove();
+                i++;
+                $('<div class="message new" style="padding: 6px 10px 7px;"><figure class="avatar"><img src="https://logos-download.com/wp-content/uploads/2016/08/RBC_logo.png" /></figure>' + Fake[3] + '</div>').appendTo($('.mCSB_container')).addClass('new');
+                $('<div class="message loading new"><figure class="avatar"><img src="https://logos-download.com/wp-content/uploads/2016/08/RBC_logo.png" /></figure><span></span></div>').appendTo($('.mCSB_container'));
+                setTimeout(function () {
+                    $('.message.loading').remove();
+                    $('<div class="message new"><figure class="avatar"><img src="https://logos-download.com/wp-content/uploads/2016/08/RBC_logo.png" /></figure>' + '  <div id="feedback" style="background-color: #fff; border-radius: 20px 20px 20px 0;" onchange="thankyou();"><div class="feedback"><div class="rating" onclick=""><input type="radio" name="rating" id="rating-5" checked><label for="rating-5"></label><input type="radio" name="rating" id="rating-4"><label for="rating-4"></label><input type="radio" name="rating" id="rating-3"><label for="rating-3"></label><input type="radio" name="rating" id="rating-2"><label for="rating-2"></label><input type="radio" name="rating" id="rating-1"><label for="rating-1"></label><div class="emoji-wrapper"> <div class="emoji"><svg class="rating-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><circle cx="256" cy="256" r="256" fill="#ffd93b" /><path d="M512 256c0 141.44-114.64 256-256 256-80.48 0-152.32-37.12-199.28-95.28 43.92 35.52 99.84 56.72 160.72 56.72 141.36 0 256-114.56 256-256 0-60.88-21.2-116.8-56.72-160.72C474.8 103.68 512 175.52 512 256z" fill="#f4c534" /><ellipse transform="scale(-1) rotate(31.21 715.433 -595.455)" cx="166.318" cy="199.829" rx="56.146" ry="56.13" fill="#fff" /><ellipse transform="rotate(-148.804 180.87 175.82)" cx="180.871" cy="175.822" rx="28.048" ry="28.08" fill="#3e4347" /><ellipse transform="rotate(-113.778 194.434 165.995)" cx="194.433" cy="165.993" rx="8.016" ry="5.296" fill="#5a5f63" /> <ellipse transform="scale(-1) rotate(31.21 715.397 -1237.664)" cx="345.695"  cy="199.819" rx="56.146" ry="56.13" fill="#fff" /><ellipse transform="rotate(-148.804 360.25 175.837)" cx="360.252" cy="175.84" rx="28.048" ry="28.08" fill="#3e4347" /> <ellipse transform="scale(-1) rotate(66.227 254.508 -573.138)" cx="373.794" cy="165.987" rx="8.016" ry="5.296" fill="#5a5f63" /><pathd="M370.56 344.4c0 7.696-6.224 13.92-13.92 13.92H155.36c-7.616 0-13.92-6.224-13.92-13.92s6.304-13.92 13.92-13.92h201.296c7.696.016 13.904 6.224 13.904 13.92z"fill="#3e4347" /> </svg> <svg class="rating-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><circle cx="256" cy="256" r="256" fill="#ffd93b" /> <path d="M512 256A256 256 0 0 1 56.7 416.7a256 256 0 0 0 360-360c58.1 47 95.3 118.8 95.3 199.3z"fill="#f4c534" /><path d="M328.4 428a92.8 92.8 0 0 0-145-.1 6.8 6.8 0 0 1-12-5.8 86.6 86.6 0 0 1 84.5-69 86.6 86.6 0 0 1 84.7 69.8c1.3 6.9-7.7 10.6-12.2 5.1z"  fill="#3e4347" /><path d="M269.2 222.3c5.3 62.8 52 113.9 104.8 113.9 52.3 0 90.8-51.1 85.6-113.9-2-25-10.8-47.9-23.7-66.7-4.1-6.1-12.2-8-18.5-4.2a111.8 111.8 0 0 1-60.1 16.2c-22.8 0-42.1-5.6-57.8-14.8-6.8-4-15.4-1.5-18.9 5.4-9 18.2-13.2 40.3-11.4 64.1z" fill="#f4c534" /><path d="M357 189.5c25.8 0 47-7.1 63.7-18.7 10 14.6 17 32.1 18.7 51.6 4 49.6-26.1 89.7-67.5 89.7-41.6 0-78.4-40.1-82.5-89.7A95 95 0 0 1 298 174c16 9.7 35.6 15.5 59 15.5z"fill="#fff" /> <path d="M396.2 246.1a38.5 38.5 0 0 1-38.7 38.6 38.5 38.5 0 0 1-38.6-38.6 38.6 38.6 0 1 1 77.3 0z" fill="#3e4347" /> <path d="M380.4 241.1c-3.2 3.2-9.9 1.7-14.9-3.2-4.8-4.8-6.2-11.5-3-14.7 3.3-3.4 10-2 14.9 2.9 4.9 5 6.4 11.7 3 15z"fill="#fff" /><path d="M242.8 222.3c-5.3 62.8-52 113.9-104.8 113.9-52.3 0-90.8-51.1-85.6-113.9 2-25 10.8-47.9 23.7-66.7 4.1-6.1 12.2-8 18.5-4.2 16.2 10.1 36.2 16.2 60.1 16.2 22.8 0 42.1-5.6 57.8-14.8 6.8-4 15.4-1.5 18.9 5.4 9 18.2 13.2 40.3 11.4 64.1z" fill="#f4c534" /><path d="M155 189.5c-25.8 0-47-7.1-63.7-18.7-10 14.6-17 32.1-18.7 51.6-4 49.6 26.1 89.7 67.5 89.7 41.6 0 78.4-40.1 82.5-89.7A95 95 0 0 0 214 174c-16 9.7-35.6 15.5-59 15.5z" fill="#fff" /><path d="M115.8 246.1a38.5 38.5 0 0 0 38.7 38.6 38.5 38.5 0 0 0 38.6-38.6 38.6 38.6 0 1 0-77.3 0z" fill="#3e4347" /> <path d="M131.6 241.1c3.2 3.2 9.9 1.7 14.9-3.2 4.8-4.8 6.2-11.5 3-14.7-3.3-3.4-10-2-14.9 2.9-4.9 5-6.4 11.7-3 15z"   fill="#fff" /> </svg> <svg class="rating-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">  <circle cx="256" cy="256" r="256" fill="#ffd93b" />  <path  d="M512 256A256 256 0 0 1 56.7 416.7a256 256 0 0 0 360-360c58.1 47 95.3 118.8 95.3 199.3z"  fill="#f4c534" /><path d="M336.6 403.2c-6.5 8-16 10-25.5 5.2a117.6 117.6 0 0 0-110.2 0c-9.4 4.9-19 3.3-25.6-4.6-6.5-7.7-4.7-21.1 8.4-28 45.1-24 99.5-24 144.6 0 13 7 14.8 19.7 8.3 27.4z" fill="#3e4347" /><path d="M276.6 244.3a79.3 79.3 0 1 1 158.8 0 79.5 79.5 0 1 1-158.8 0z" fill="#fff" /> <circle cx="340" cy="260.4" r="36.2" fill="#3e4347" /> <g fill="#fff"> <ellipse transform="rotate(-135 326.4 246.6)" cx="326.4" cy="246.6" rx="6.5" ry="10" /> <path d="M231.9 244.3a79.3 79.3 0 1 0-158.8 0 79.5 79.5 0 1 0 158.8 0z" /> </g><circle cx="168.5" cy="260.4" r="36.2" fill="#3e4347" /> <ellipse transform="rotate(-135 182.1 246.7)" cx="182.1" cy="246.7" rx="10" ry="6.5" fill="#fff" />  </svg> <svg class="rating-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"> <circle cx="256" cy="256" r="256" fill="#ffd93b" /> <path d="M407.7 352.8a163.9 163.9 0 0 1-303.5 0c-2.3-5.5 1.5-12 7.5-13.2a780.8 780.8 0 0 1 288.4 0c6 1.2 9.9 7.7 7.6 13.2z"  fill="#3e4347" /> <path d="M512 256A256 256 0 0 1 56.7 416.7a256 256 0 0 0 360-360c58.1 47 95.3 118.8 95.3 199.3z" fill="#f4c534" /> <g fill="#fff"> <path d="M115.3 339c18.2 29.6 75.1 32.8 143.1 32.8 67.1 0 124.2-3.2 143.2-31.6l-1.5-.6a780.6 780.6 0 0 0-284.8-.6z" /> <ellipse cx="356.4" cy="205.3" rx="81.1" ry="81" /> </g> <ellipse cx="356.4" cy="205.3" rx="44.2" ry="44.2" fill="#3e4347" /><g fill="#fff"> <ellipse transform="scale(-1) rotate(45 454 -906)" cx="375.3" cy="188.1" rx="12" ry="8.1" /><ellipse cx="155.6" cy="205.3" rx="81.1" ry="81" /> </g><ellipse cx="155.6" cy="205.3" rx="44.2" ry="44.2" fill="#3e4347" /><ellipse transform="scale(-1) rotate(45 454 -421.3)" cx="174.5" cy="188" rx="12" ry="8.1" fill="#fff" /> </svg> <svg class="rating-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"> <circle cx="256" cy="256" r="256" fill="#ffd93b" /> <path d="M512 256A256 256 0 0 1 56.7 416.7a256 256 0 0 0 360-360c58.1 47 95.3 118.8 95.3 199.3z" fill="#f4c534" /> <path d="M232.3 201.3c0 49.2-74.3 94.2-74.3 94.2s-74.4-45-74.4-94.2a38 38 0 0 1 74.4-11.1 38 38 0 0 1 74.3 11.1z" fill="#e24b4b" /> <path d="M96.1 173.3a37.7 37.7 0 0 0-12.4 28c0 49.2 74.3 94.2 74.3 94.2C80.2 229.8 95.6 175.2 96 173.3z" fill="#d03f3f" /> <path d="M215.2 200c-3.6 3-9.8 1-13.8-4.1-4.2-5.2-4.6-11.5-1.2-14.1 3.6-2.8 9.7-.7 13.9 4.4 4 5.2 4.6 11.4 1.1 13.8z" fill="#fff" /> <path d="M428.4 201.3c0 49.2-74.4 94.2-74.4 94.2s-74.3-45-74.3-94.2a38 38 0 0 1 74.4-11.1 38 38 0 0 1 74.3 11.1z"  fill="#e24b4b" /> <path d="M292.2 173.3a37.7 37.7 0 0 0-12.4 28c0 49.2 74.3 94.2 74.3 94.2-77.8-65.7-62.4-120.3-61.9-122.2z" fill="#d03f3f" /> <path d="M411.3 200c-3.6 3-9.8 1-13.8-4.1-4.2-5.2-4.6-11.5-1.2-14.1 3.6-2.8 9.7-.7 13.9 4.4 4 5.2 4.6 11.4 1.1 13.8z" fill="#fff" /> <path d="M381.7 374.1c-30.2 35.9-75.3 64.4-125.7 64.4s-95.4-28.5-125.8-64.2a17.6 17.6 0 0 1 16.5-28.7 627.7 627.7 0 0 0 218.7-.1c16.2-2.7 27 16.1 16.3 28.6z" fill="#3e4347" /> <path d="M256 438.5c25.7 0 50-7.5 71.7-19.5-9-33.7-40.7-43.3-62.6-31.7-29.7 15.8-62.8-4.7-75.6 34.3 20.3 10.4 42.8 17 66.5 17z" fill="#e24b4b" /> </svg> <svg class="rating-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><g fill="#ffd93b"> <circle cx="256" cy="256" r="256" /><path d="M512 256A256 256 0 0 1 56.8 416.7a256 256 0 0 0 360-360c58 47 95.2 118.8 95.2 199.3z" /></g> <path  d="M512 99.4v165.1c0 11-8.9 19.9-19.7 19.9h-187c-13 0-23.5-10.5-23.5-23.5v-21.3c0-12.9-8.9-24.8-21.6-26.7-16.2-2.5-30 10-30 25.5V261c0 13-10.5 23.5-23.5 23.5h-187A19.7 19.7 0 0 1 0 264.7V99.4c0-10.9 8.8-19.7 19.7-19.7h472.6c10.8 0 19.7 8.7 19.7 19.7z"  fill="#e9eff4" /> <path d="M204.6 138v88.2a23 23 0 0 1-23 23H58.2a23 23 0 0 1-23-23v-88.3a23 23 0 0 1 23-23h123.4a23 23 0 0 1 23 23z" fill="#45cbea" /><path d="M476.9 138v88.2a23 23 0 0 1-23 23H330.3a23 23 0 0 1-23-23v-88.3a23 23 0 0 1 23-23h123.4a23 23 0 0 1 23 23z" fill="#e84d88" /> <g fill="#38c0dc"> <path  d="M95.2 114.9l-60 60v15.2l75.2-75.2zM123.3 114.9L35.1 203v23.2c0 1.8.3 3.7.7 5.4l116.8-116.7h-29.3z" /> </g> <g fill="#d23f77"><path d="M373.3 114.9l-66 66V196l81.3-81.2zM401.5 114.9l-94.1 94v17.3c0 3.5.8 6.8 2.2 9.8l121.1-121.1h-29.2z" /> </g> <path  d="M329.5 395.2c0 44.7-33 81-73.4 81-40.7 0-73.5-36.3-73.5-81s32.8-81 73.5-81c40.5 0 73.4 36.3 73.4 81z" fill="#3e4347" /> <path d="M256 476.2a70 70 0 0 0 53.3-25.5 34.6 34.6 0 0 0-58-25 34.4 34.4 0 0 0-47.8 26 69.9 69.9 0 0 0 52.6 24.5z" fill="#e24b4b" /> <path d="M290.3 434.8c-1 3.4-5.8 5.2-11 3.9s-8.4-5.1-7.4-8.7c.8-3.3 5.7-5 10.7-3.8 5.1 1.4 8.5 5.3 7.7 8.6z" fill="#fff" opacity=".2" /> </svg> </div> </div> </div></div></div>' + '</div>').appendTo($('.mCSB_container')).addClass('new');
+                    setDate();
+                    updateScrollbar();
+                    i++;
+                }, 2500);
+            }, 2500);
         }
     }
     function fourthform() {
         // $('#fourth-step').hide();
-        $('#fifth-step').show();
-        $('#feedback').show();
+        // $('#fifth-step').show();
+        // $('#feedback').show();
+        insertMessage('Transfer');
+        $('#fourth-step').addClass('form_disable');
+        $('<div class="message loading new"><figure class="avatar"><img src="https://logos-download.com/wp-content/uploads/2016/08/RBC_logo.png" /></figure><span></span></div>').appendTo($('.mCSB_container'));
+        setTimeout(function () {
+            $('.message.loading').remove();
+            $('<div class="message new" style="padding: 6px 10px 7px;"><figure class="avatar"><img src="https://logos-download.com/wp-content/uploads/2016/08/RBC_logo.png" /></figure>' + Fake[2] + '</div>').appendTo($('.mCSB_container')).addClass('new');
+            i++;
+            $('<div class="message loading new"><figure class="avatar"><img src="https://logos-download.com/wp-content/uploads/2016/08/RBC_logo.png" /></figure><span></span></div>').appendTo($('.mCSB_container'));
+            setTimeout(function () {
+                $('.message.loading').remove();
+                $('<div class="message new" style="padding: 6px 10px 7px;"><figure class="avatar"><img src="https://logos-download.com/wp-content/uploads/2016/08/RBC_logo.png" /></figure>' + 'Money should be in your account by' + Date() + 2 + '</div>').appendTo($('.mCSB_container')).addClass('new');
+                i++;
+                $('<div class="message loading new"><figure class="avatar"><img src="https://logos-download.com/wp-content/uploads/2016/08/RBC_logo.png" /></figure><span></span></div>').appendTo($('.mCSB_container'));
+                setTimeout(function () {
+                    $('.message.loading').remove();
+                    $('<div class="message new" style="padding: 6px 10px 7px;"><figure class="avatar"><img src="https://logos-download.com/wp-content/uploads/2016/08/RBC_logo.png" /></figure>' + Fake[3] + '</div>').appendTo($('.mCSB_container')).addClass('new');
+                    $('<div class="message loading new"><figure class="avatar"><img src="https://logos-download.com/wp-content/uploads/2016/08/RBC_logo.png" /></figure><span></span></div>').appendTo($('.mCSB_container'));
+                    setTimeout(function () {
+                        $('.message.loading').remove();
+                        $('<div class="message new"><figure class="avatar"><img src="https://logos-download.com/wp-content/uploads/2016/08/RBC_logo.png" /></figure>' + '  <div id="feedback" style="background-color: #fff; border-radius: 20px 20px 20px 0;" onchange="thankyou();"><div class="feedback"><div class="rating" onclick=""><input type="radio" name="rating" id="rating-5" checked><label for="rating-5"></label><input type="radio" name="rating" id="rating-4"><label for="rating-4"></label><input type="radio" name="rating" id="rating-3"><label for="rating-3"></label><input type="radio" name="rating" id="rating-2"><label for="rating-2"></label><input type="radio" name="rating" id="rating-1"><label for="rating-1"></label><div class="emoji-wrapper"> <div class="emoji"><svg class="rating-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><circle cx="256" cy="256" r="256" fill="#ffd93b" /><path d="M512 256c0 141.44-114.64 256-256 256-80.48 0-152.32-37.12-199.28-95.28 43.92 35.52 99.84 56.72 160.72 56.72 141.36 0 256-114.56 256-256 0-60.88-21.2-116.8-56.72-160.72C474.8 103.68 512 175.52 512 256z" fill="#f4c534" /><ellipse transform="scale(-1) rotate(31.21 715.433 -595.455)" cx="166.318" cy="199.829" rx="56.146" ry="56.13" fill="#fff" /><ellipse transform="rotate(-148.804 180.87 175.82)" cx="180.871" cy="175.822" rx="28.048" ry="28.08" fill="#3e4347" /><ellipse transform="rotate(-113.778 194.434 165.995)" cx="194.433" cy="165.993" rx="8.016" ry="5.296" fill="#5a5f63" /> <ellipse transform="scale(-1) rotate(31.21 715.397 -1237.664)" cx="345.695"  cy="199.819" rx="56.146" ry="56.13" fill="#fff" /><ellipse transform="rotate(-148.804 360.25 175.837)" cx="360.252" cy="175.84" rx="28.048" ry="28.08" fill="#3e4347" /> <ellipse transform="scale(-1) rotate(66.227 254.508 -573.138)" cx="373.794" cy="165.987" rx="8.016" ry="5.296" fill="#5a5f63" /><pathd="M370.56 344.4c0 7.696-6.224 13.92-13.92 13.92H155.36c-7.616 0-13.92-6.224-13.92-13.92s6.304-13.92 13.92-13.92h201.296c7.696.016 13.904 6.224 13.904 13.92z"fill="#3e4347" /> </svg> <svg class="rating-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><circle cx="256" cy="256" r="256" fill="#ffd93b" /> <path d="M512 256A256 256 0 0 1 56.7 416.7a256 256 0 0 0 360-360c58.1 47 95.3 118.8 95.3 199.3z"fill="#f4c534" /><path d="M328.4 428a92.8 92.8 0 0 0-145-.1 6.8 6.8 0 0 1-12-5.8 86.6 86.6 0 0 1 84.5-69 86.6 86.6 0 0 1 84.7 69.8c1.3 6.9-7.7 10.6-12.2 5.1z"  fill="#3e4347" /><path d="M269.2 222.3c5.3 62.8 52 113.9 104.8 113.9 52.3 0 90.8-51.1 85.6-113.9-2-25-10.8-47.9-23.7-66.7-4.1-6.1-12.2-8-18.5-4.2a111.8 111.8 0 0 1-60.1 16.2c-22.8 0-42.1-5.6-57.8-14.8-6.8-4-15.4-1.5-18.9 5.4-9 18.2-13.2 40.3-11.4 64.1z" fill="#f4c534" /><path d="M357 189.5c25.8 0 47-7.1 63.7-18.7 10 14.6 17 32.1 18.7 51.6 4 49.6-26.1 89.7-67.5 89.7-41.6 0-78.4-40.1-82.5-89.7A95 95 0 0 1 298 174c16 9.7 35.6 15.5 59 15.5z"fill="#fff" /> <path d="M396.2 246.1a38.5 38.5 0 0 1-38.7 38.6 38.5 38.5 0 0 1-38.6-38.6 38.6 38.6 0 1 1 77.3 0z" fill="#3e4347" /> <path d="M380.4 241.1c-3.2 3.2-9.9 1.7-14.9-3.2-4.8-4.8-6.2-11.5-3-14.7 3.3-3.4 10-2 14.9 2.9 4.9 5 6.4 11.7 3 15z"fill="#fff" /><path d="M242.8 222.3c-5.3 62.8-52 113.9-104.8 113.9-52.3 0-90.8-51.1-85.6-113.9 2-25 10.8-47.9 23.7-66.7 4.1-6.1 12.2-8 18.5-4.2 16.2 10.1 36.2 16.2 60.1 16.2 22.8 0 42.1-5.6 57.8-14.8 6.8-4 15.4-1.5 18.9 5.4 9 18.2 13.2 40.3 11.4 64.1z" fill="#f4c534" /><path d="M155 189.5c-25.8 0-47-7.1-63.7-18.7-10 14.6-17 32.1-18.7 51.6-4 49.6 26.1 89.7 67.5 89.7 41.6 0 78.4-40.1 82.5-89.7A95 95 0 0 0 214 174c-16 9.7-35.6 15.5-59 15.5z" fill="#fff" /><path d="M115.8 246.1a38.5 38.5 0 0 0 38.7 38.6 38.5 38.5 0 0 0 38.6-38.6 38.6 38.6 0 1 0-77.3 0z" fill="#3e4347" /> <path d="M131.6 241.1c3.2 3.2 9.9 1.7 14.9-3.2 4.8-4.8 6.2-11.5 3-14.7-3.3-3.4-10-2-14.9 2.9-4.9 5-6.4 11.7-3 15z"   fill="#fff" /> </svg> <svg class="rating-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">  <circle cx="256" cy="256" r="256" fill="#ffd93b" />  <path  d="M512 256A256 256 0 0 1 56.7 416.7a256 256 0 0 0 360-360c58.1 47 95.3 118.8 95.3 199.3z"  fill="#f4c534" /><path d="M336.6 403.2c-6.5 8-16 10-25.5 5.2a117.6 117.6 0 0 0-110.2 0c-9.4 4.9-19 3.3-25.6-4.6-6.5-7.7-4.7-21.1 8.4-28 45.1-24 99.5-24 144.6 0 13 7 14.8 19.7 8.3 27.4z" fill="#3e4347" /><path d="M276.6 244.3a79.3 79.3 0 1 1 158.8 0 79.5 79.5 0 1 1-158.8 0z" fill="#fff" /> <circle cx="340" cy="260.4" r="36.2" fill="#3e4347" /> <g fill="#fff"> <ellipse transform="rotate(-135 326.4 246.6)" cx="326.4" cy="246.6" rx="6.5" ry="10" /> <path d="M231.9 244.3a79.3 79.3 0 1 0-158.8 0 79.5 79.5 0 1 0 158.8 0z" /> </g><circle cx="168.5" cy="260.4" r="36.2" fill="#3e4347" /> <ellipse transform="rotate(-135 182.1 246.7)" cx="182.1" cy="246.7" rx="10" ry="6.5" fill="#fff" />  </svg> <svg class="rating-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"> <circle cx="256" cy="256" r="256" fill="#ffd93b" /> <path d="M407.7 352.8a163.9 163.9 0 0 1-303.5 0c-2.3-5.5 1.5-12 7.5-13.2a780.8 780.8 0 0 1 288.4 0c6 1.2 9.9 7.7 7.6 13.2z"  fill="#3e4347" /> <path d="M512 256A256 256 0 0 1 56.7 416.7a256 256 0 0 0 360-360c58.1 47 95.3 118.8 95.3 199.3z" fill="#f4c534" /> <g fill="#fff"> <path d="M115.3 339c18.2 29.6 75.1 32.8 143.1 32.8 67.1 0 124.2-3.2 143.2-31.6l-1.5-.6a780.6 780.6 0 0 0-284.8-.6z" /> <ellipse cx="356.4" cy="205.3" rx="81.1" ry="81" /> </g> <ellipse cx="356.4" cy="205.3" rx="44.2" ry="44.2" fill="#3e4347" /><g fill="#fff"> <ellipse transform="scale(-1) rotate(45 454 -906)" cx="375.3" cy="188.1" rx="12" ry="8.1" /><ellipse cx="155.6" cy="205.3" rx="81.1" ry="81" /> </g><ellipse cx="155.6" cy="205.3" rx="44.2" ry="44.2" fill="#3e4347" /><ellipse transform="scale(-1) rotate(45 454 -421.3)" cx="174.5" cy="188" rx="12" ry="8.1" fill="#fff" /> </svg> <svg class="rating-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"> <circle cx="256" cy="256" r="256" fill="#ffd93b" /> <path d="M512 256A256 256 0 0 1 56.7 416.7a256 256 0 0 0 360-360c58.1 47 95.3 118.8 95.3 199.3z" fill="#f4c534" /> <path d="M232.3 201.3c0 49.2-74.3 94.2-74.3 94.2s-74.4-45-74.4-94.2a38 38 0 0 1 74.4-11.1 38 38 0 0 1 74.3 11.1z" fill="#e24b4b" /> <path d="M96.1 173.3a37.7 37.7 0 0 0-12.4 28c0 49.2 74.3 94.2 74.3 94.2C80.2 229.8 95.6 175.2 96 173.3z" fill="#d03f3f" /> <path d="M215.2 200c-3.6 3-9.8 1-13.8-4.1-4.2-5.2-4.6-11.5-1.2-14.1 3.6-2.8 9.7-.7 13.9 4.4 4 5.2 4.6 11.4 1.1 13.8z" fill="#fff" /> <path d="M428.4 201.3c0 49.2-74.4 94.2-74.4 94.2s-74.3-45-74.3-94.2a38 38 0 0 1 74.4-11.1 38 38 0 0 1 74.3 11.1z"  fill="#e24b4b" /> <path d="M292.2 173.3a37.7 37.7 0 0 0-12.4 28c0 49.2 74.3 94.2 74.3 94.2-77.8-65.7-62.4-120.3-61.9-122.2z" fill="#d03f3f" /> <path d="M411.3 200c-3.6 3-9.8 1-13.8-4.1-4.2-5.2-4.6-11.5-1.2-14.1 3.6-2.8 9.7-.7 13.9 4.4 4 5.2 4.6 11.4 1.1 13.8z" fill="#fff" /> <path d="M381.7 374.1c-30.2 35.9-75.3 64.4-125.7 64.4s-95.4-28.5-125.8-64.2a17.6 17.6 0 0 1 16.5-28.7 627.7 627.7 0 0 0 218.7-.1c16.2-2.7 27 16.1 16.3 28.6z" fill="#3e4347" /> <path d="M256 438.5c25.7 0 50-7.5 71.7-19.5-9-33.7-40.7-43.3-62.6-31.7-29.7 15.8-62.8-4.7-75.6 34.3 20.3 10.4 42.8 17 66.5 17z" fill="#e24b4b" /> </svg> <svg class="rating-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><g fill="#ffd93b"> <circle cx="256" cy="256" r="256" /><path d="M512 256A256 256 0 0 1 56.8 416.7a256 256 0 0 0 360-360c58 47 95.2 118.8 95.2 199.3z" /></g> <path  d="M512 99.4v165.1c0 11-8.9 19.9-19.7 19.9h-187c-13 0-23.5-10.5-23.5-23.5v-21.3c0-12.9-8.9-24.8-21.6-26.7-16.2-2.5-30 10-30 25.5V261c0 13-10.5 23.5-23.5 23.5h-187A19.7 19.7 0 0 1 0 264.7V99.4c0-10.9 8.8-19.7 19.7-19.7h472.6c10.8 0 19.7 8.7 19.7 19.7z"  fill="#e9eff4" /> <path d="M204.6 138v88.2a23 23 0 0 1-23 23H58.2a23 23 0 0 1-23-23v-88.3a23 23 0 0 1 23-23h123.4a23 23 0 0 1 23 23z" fill="#45cbea" /><path d="M476.9 138v88.2a23 23 0 0 1-23 23H330.3a23 23 0 0 1-23-23v-88.3a23 23 0 0 1 23-23h123.4a23 23 0 0 1 23 23z" fill="#e84d88" /> <g fill="#38c0dc"> <path  d="M95.2 114.9l-60 60v15.2l75.2-75.2zM123.3 114.9L35.1 203v23.2c0 1.8.3 3.7.7 5.4l116.8-116.7h-29.3z" /> </g> <g fill="#d23f77"><path d="M373.3 114.9l-66 66V196l81.3-81.2zM401.5 114.9l-94.1 94v17.3c0 3.5.8 6.8 2.2 9.8l121.1-121.1h-29.2z" /> </g> <path  d="M329.5 395.2c0 44.7-33 81-73.4 81-40.7 0-73.5-36.3-73.5-81s32.8-81 73.5-81c40.5 0 73.4 36.3 73.4 81z" fill="#3e4347" /> <path d="M256 476.2a70 70 0 0 0 53.3-25.5 34.6 34.6 0 0 0-58-25 34.4 34.4 0 0 0-47.8 26 69.9 69.9 0 0 0 52.6 24.5z" fill="#e24b4b" /> <path d="M290.3 434.8c-1 3.4-5.8 5.2-11 3.9s-8.4-5.1-7.4-8.7c.8-3.3 5.7-5 10.7-3.8 5.1 1.4 8.5 5.3 7.7 8.6z" fill="#fff" opacity=".2" /> </svg> </div> </div> </div></div></div>' + '</div>').appendTo($('.mCSB_container')).addClass('new');
+                        setDate();
+                        updateScrollbar();
+                        i++;
+                    }, 2500);
+                }, 2500);
+            }, 2500);
+        }, 2500);
     }
-
-    function thankyou(){
-        $('#thank_you').show();
+    function thankyou() {
+        $('<div class="message loading new"><figure class="avatar"><img src="https://logos-download.com/wp-content/uploads/2016/08/RBC_logo.png" /></figure><span></span></div>').appendTo($('.mCSB_container'));
+        setTimeout(function () {
+            $('.message.loading').remove();
+            $('<div class="message new" style="padding: 6px 10px 7px;"><figure class="avatar"><img src="https://logos-download.com/wp-content/uploads/2016/08/RBC_logo.png" /></figure>' + Fake[4] + '</div>').appendTo($('.mCSB_container')).addClass('new');
+            setDate();
+            updateScrollbar();
+        }, 2500);
     }
     var $messages = $('.messages-content'),
         d, h, m,
@@ -789,11 +902,12 @@ Inspired by https://dribbble.com/supahfunk
     function updateScrollbar() {
         $messages.mCustomScrollbar("update").mCustomScrollbar('scrollTo', 'bottom', {
             scrollInertia: 10,
-            timeout: 0
+            timeout: 1
         });
     }
 
     function setDate() {
+        console.log("date");
         d = new Date()
         if (m != d.getMinutes()) {
             m = d.getMinutes();
@@ -801,10 +915,11 @@ Inspired by https://dribbble.com/supahfunk
             $('<div class="checkmark-sent-delivered">&check;</div>').appendTo($('.message:last'));
             $('<div class="checkmark-read">&check;</div>').appendTo($('.message:last'));
         }
+        console.log("enddate");
     }
 
-    function insertMessage() {
-        msg = $('.message-input').val();
+    function insertMessage(val) {
+        msg = val;
         if ($.trim(msg) == '') {
             return false;
         }
@@ -813,8 +928,8 @@ Inspired by https://dribbble.com/supahfunk
         $('.message-input').val(null);
         updateScrollbar();
         setTimeout(function () {
-            fakeMessage();
-        }, 1000 + (Math.random() * 20) * 100);
+            // fakeMessage();
+        }, 2500);
     }
 
     $('.message-submit').click(function () {
@@ -829,13 +944,13 @@ Inspired by https://dribbble.com/supahfunk
     })
 
     var Fake = [
-        'Hi there, I\'m Jesse and you?',
-        'Nice to meet you',
-        'How are you?',
-        'Not too bad, thanks',
-        'What do you do?',
-        'That\'s awesome',
-        'Codepen is a nice place to stay',
+        'Hello!! I can help you to move money from TFSA.',
+        'You have successfully transfer $2,000 from your TFSA account to Chequing account.',
+        'You have successfully schedule to transfer $2,000 from your Chequing account to US Bank Account.',
+        'Thank you.!! Please rate us.',
+        'Thank you for rating us.!!',
+        'Your transaction number is 89067546890834982.',
+        'Your transaction number is US675498234689065.',
         'I think you\'re a nice person',
         'Why do you think that?',
         'Can you explain?',
@@ -850,16 +965,22 @@ Inspired by https://dribbble.com/supahfunk
         if ($('.message-input').val() != '') {
             return false;
         }
+        // console.log(this);
         $('<div class="message loading new"><figure class="avatar"><img src="https://logos-download.com/wp-content/uploads/2016/08/RBC_logo.png" /></figure><span></span></div>').appendTo($('.mCSB_container'));
         updateScrollbar();
 
         setTimeout(function () {
             $('.message.loading').remove();
-            $('<div class="message new"><figure class="avatar"><img src="https://logos-download.com/wp-content/uploads/2016/08/RBC_logo.png" /></figure>' + Fake[i] + '</div>').appendTo($('.mCSB_container')).addClass('new');
-            setDate();
-            updateScrollbar();
-            i++;
-        }, 1000 + (Math.random() * 20) * 100);
+            $('<div class="message new" style="padding: 6px 10px 7px;"><figure class="avatar"><img src="https://logos-download.com/wp-content/uploads/2016/08/RBC_logo.png" /></figure>' + Fake[0] + '</div>').appendTo($('.mCSB_container')).addClass('new');
+            $('<div class="message loading new"><figure class="avatar"><img src="https://logos-download.com/wp-content/uploads/2016/08/RBC_logo.png" /></figure><span></span></div>').appendTo($('.mCSB_container'));
+            setTimeout(function () {
+                $('.message.loading').remove();
+                $('<div class="message new"><figure class="avatar"><img src="https://logos-download.com/wp-content/uploads/2016/08/RBC_logo.png" /></figure>' + '<div id="second-step"  style="align-self: center; width: 220px; border-radius: 20px 20px 20px 0; background-color: #fff;"><div style=" text-align: center; width: 100%;"><select name="from" style=" width: -webkit-fill-available; border-top: white;border-left: white;border-right: white"><option value="Saving">Saving</option> <option value="TFSA" selected>TFSA</option> <option value="US Bank Account">US Bank Account</option> <option value="Chequing">Chequing</option></select>  </div>  <div style="text-align: center; width: 100%;"> <select name="to" style=" width: -webkit-fill-available; border-top: white;border-left: white;border-right: white"> <option value="Saving">Saving</option> <option value="TFSA">TFSA</option> <option value="US Bank Account">US Bank Account</option>  <option value="Chequing" selected>Chequing</option> </select>  </div> <div style="  width: -webkit-fill-available; border-top: white;border-left: white;border-right: white; "> <input value="$2,000" type="text" placeholder="Amount" style=" width: -webkit-fill-available; border-top: white;border-left: white;border-right: white"></div> <div style=" text-align: center; width: 100%;"> <button class="btn primary" value="Transfer" type="button" onclick="secondform();" style="width:-webkit-fill-available; margin-top:10px; margin-bottom: 10px;">Transfer </button></div> </div>' + '</div>').appendTo($('.mCSB_container')).addClass('new');
+                setDate();
+                updateScrollbar();
+                i++;
+            }, 2500);
+        }, 2500);
 
     }
 
