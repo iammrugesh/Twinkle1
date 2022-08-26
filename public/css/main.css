@@ -818,6 +818,7 @@ textarea.message-input:focus, textarea.message-input:hover{
   /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05); */
 }
 .rating input[type=radio]+:before {
+  all: unset;
   width:0px !important;
   height: 0px !important;
 }
@@ -854,4 +855,10 @@ ul li span {
 .form_disable{
   pointer-events: none;
     opacity: 0.3;
+}
+.rating label{
+  padding: 0% !important;
+  margin: 0% !important;
+  height: 40px;
+  top: 100px;
 }
